@@ -1,0 +1,27 @@
+.footer {
+  flex: 0 0 auto;
+  z-index: 5;
+  padding-inline: clamp(16px, calc(16px + (64 * (100vw - 360px) / 1560)), 80px);
+  padding-block: 25px;
+  z-index: 5;
+
+  &__items {
+    display: flex;
+    gap: 12px;
+  }
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    padding-block: 22px;
+    &__items {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

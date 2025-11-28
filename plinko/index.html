@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Plinko</title>
+    <link rel="preconnect" href="/https://fonts.googleapis.com" />
+    <link rel="preconnect" href="/https://fonts.gstatic.com" crossorigin />
+    <link
+      href="/https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./img/icon.ico" />
+    <script>
+      document.documentElement.classList.add("app-preparing");
+    </script>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body style="background-color: #121212;padding-top: constant(safe-area-inset-top);
+    padding-left: constant(safe-area-inset-left);
+    padding-right: constant(safe-area-inset-right);
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-top: env(safe-area-inset-top);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);">
+    <section class="section">
+      <img
+        class="section__shadow section__shadow--bottom"
+        src="./img/desktop/shadow.webp"
+        alt="shadow"
+      />
+
+      <div class="header">
+        <div class="header__content">
+          <div class="header__logo">
+            <img src="./img/desktop/logo.svg" alt="" class="header__logoImg" />
+          </div>
+          <div class="header__navigation">
+            <div class="navigationWrapper">
+              <div class="navigation" tabindex="0">
+                <div class="navigation__mainBlock">
+                  <div class="navigation__item">
+                    <img
+                      src="./img/svg/flag_en.svg"
+                      alt="Eng"
+                      class="navigation__itemImg"
+                    />
+                    <span class="navigation__itemText">Eng</span>
+                  </div>
+                  <div class="navigation__arrow">
+                    <img
+                      class="navigation__arrowImg"
+                      src="./img/svg/arrow.svg"
+                      alt="Arrow"
+                    />
+                  </div>
+                </div>
+
+                <div id="lang" class="navigation__items">
+                  <div value="eng" class="navigation__item">
+                    <img
+                      src="./img/svg/flag_en.svg"
+                      alt="Eng"
+                      class="navigation__itemImg"
+                    />
+                    <span class="navigation__itemText">Eng</span>
+                  </div>
+                  <div value="por" class="navigation__item">
+                    <img
+                      src="./img/svg/flag_pt.svg"
+                      alt="Por"
+                      class="navigation__itemImg"
+                    />
+                    <span class="navigation__itemText">Por</span>
+                  </div>
+                  <div value="esp" class="navigation__item">
+                    <img
+                      src="./img/svg/flag_es.svg"
+                      alt="Esp"
+                      class="navigation__itemImg"
+                    />
+                    <span class="navigation__itemText">Esp</span>
+                  </div>
+                  <div value="fra" class="navigation__item">
+                    <img
+                      src="./img/svg/flag_fr.svg"
+                      alt="Fra"
+                      class="navigation__itemImg"
+                    />
+                    <span class="navigation__itemText">Fra</span>
+                  </div>
+                  <div value="nor" class="navigation__item">
+                    <img
+                      src="./img/svg/flag_nr.svg"
+                      alt="Nor"
+                      class="navigation__itemImg"
+                    />
+                    <span class="navigation__itemText">Nor</span>
+                  </div>
+                  <div value="suo" class="navigation__item">
+                    <img
+                      src="./img/svg/flag_suo.svg"
+                      alt="Suo"
+                      class="navigation__itemImg"
+                    />
+                    <span class="navigation__itemText">Suo</span>
+                  </div>
+                  <div value="deu" class="navigation__item">
+                    <img
+                      src="./img/svg/flag_deu.svg"
+                      alt="Deu"
+                      class="navigation__itemImg"
+                    />
+                    <span class="navigation__itemText">Deu</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mainContent">
+        <div class="mainContent__container">
+          <div class="section__title">
+            <div class="game-promo__wrapper">
+              <img
+                class="game-promo__img"
+                src="./img/desktop/game_promo1x.webp"
+                srcset="
+                  ./img/desktop/game_promo1x.webp 1x,
+                  ./img/desktop/game_promo2x.webp 2x
+                "
+                alt="game promo"
+              />
+            </div>
+            <span data-translate="langing-title" class="game-promo__text"
+              >Try your luck in</span
+            ><span class="space">&nbsp;</span>
+            <span class="game-promo__text game-promo__text-gradient"
+              >Plinko</span
+            >
+
+            <div class="button--wrapper">
+              <button
+                data-translate="landing-btn"
+                class="button button--stop"
+                type="button"
+              >
+                spin the wheel
+              </button>
+            </div>
+          </div>
+
+          <div class="positioned-elements">
+            <div class="coins-ball__container">
+              <div class="small-ball">
+                <img
+                  class="small-ball__img"
+                  src="./img/desktop/small_ball@1x.webp"
+                  srcset="
+                    ./img/desktop/small_ball@1x.webp 1x,
+                    ./img/desktop/small_ball@2x.webp 2x
+                  "
+                  alt="small ball"
+                />
+              </div>
+              <div class="small-coin">
+                <img
+                  class="small-coin__img"
+                  src="./img/desktop/small_coin@1x.webp"
+                  srcset="
+                    ./img/desktop/small_coin@1x.webp 1x,
+                    ./img/desktop/small_coin@2x.webp 2x
+                  "
+                  alt="small coin"
+                />
+              </div>
+              <div class="ball">
+                <img
+                  class="ball__img"
+                  src="./img/desktop/ball@1x.webp"
+                  srcset="
+                    ./img/desktop/ball@1x.webp 1x,
+                    ./img/desktop/ball@2x.webp 2x
+                  "
+                  alt="ball"
+                />
+              </div>
+              <picture>
+                <source
+                  srcset="
+                    ./img/desktop/play_light.webp    1x,
+                    ./img/desktop/play_light@2x.webp 2x
+                  "
+                  type="image/webp"
+                />
+                <img
+                  class="wheel__img"
+                  src="./img/desktop/play_light.webp"
+                  alt="wheel"
+                />
+              </picture>
+              <img
+                class="wheel__btn"
+                src="./img/desktop/spin1x.webp"
+                srcset="
+                  ./img/desktop/spin1x.webp 1x,
+                  ./img/desktop/spin2x.webp 2x
+                "
+                alt="spin button"
+              />
+              <img
+                class="coin"
+                src="./img/desktop/big_coin@1x.webp"
+                srcset="
+                  ./img/desktop/big_coin@1x.webp 1x,
+                  ./img/desktop/big_coin@2x.webp 2x
+                "
+                alt="Coin"
+              />
+              <div class="wheelContainer">
+                <div class="wheel__spin wheel--idle wheel--spinning">
+                  <div
+                    class="wheel__prize"
+                    style="
+                      --i: 1;
+                      --clr: linear-gradient(
+                        44deg,
+                        #605387 15.11%,
+                        #101119 108.64%
+                      );
+                    "
+                  >
+                    <div class="wheel__text-container">
+                      <span class="wheel__main-text">3000<br />USDT</span>
+                      <span
+                        data-translate="landing-wheel-deposit"
+                        class="wheel__main-subtext wheel__main-subtext--rotate"
+                        >to deposite</span
+                      >
+                      <span class="wheel__sub-text">+ 165 FS</span>
+                    </div>
+                  </div>
+                  <div
+                    class="wheel__prize"
+                    style="
+                      --i: 2;
+                      --clr: linear-gradient(270deg, #ff9600 0%, #daff00 100%);
+                    "
+                  >
+                    <div class="wheel__text-container">
+                      <span class="wheel__main-text wheel__text--color"
+                        >3000<br />USDT</span
+                      >
+                      <span
+                        data-translate="landing-wheel-deposit"
+                        class="wheel__sub-text wheel__text--color"
+                        >to deposite</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="wheel__prize"
+                    style="
+                      --i: 3;
+                      --clr: linear-gradient(
+                        44deg,
+                        #605387 15.11%,
+                        #101119 108.64%
+                      );
+                    "
+                  >
+                    <div class="wheel__text-container">
+                      <span
+                        data-translate="landing-wheel-no"
+                        class="wheel__main-text"
+                        >no</span
+                      >
+                      <span
+                        data-translate="landing-wheel-prize"
+                        class="wheel__sub-text rotate"
+                        >prize</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="wheel__prize"
+                    style="
+                      --i: 4;
+                      --clr: linear-gradient(270deg, #ff9600 0%, #daff00 100%);
+                    "
+                  >
+                    <div class="wheel__text-container">
+                      <span class="wheel__main-text wheel__text--color"
+                        >165<br />FS</span
+                      >
+                      <span
+                        data-translate="landing-wheel-deposit"
+                        class="wheel__sub-text wheel__text--color"
+                        >to deposite</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="wheel__prize"
+                    style="
+                      --i: 5;
+                      --clr: linear-gradient(
+                        44deg,
+                        #605387 15.11%,
+                        #101119 108.64%
+                      );
+                    "
+                  >
+                    <div class="wheel__text-container">
+                      <span class="wheel__main-text">3000<br />USDT</span>
+                      <span
+                        data-translate="landing-wheel-deposit"
+                        class="wheel__sub-text"
+                        >to deposite</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="wheel__prize"
+                    style="
+                      --i: 6;
+                      --clr: linear-gradient(270deg, #ff9600 0%, #daff00 100%);
+                    "
+                  >
+                    <div class="wheel__text-container">
+                      <span class="wheel__main-text wheel__text--color"
+                        >3000<br />USDT</span
+                      >
+                      <span
+                        data-translate="landing-wheel-deposit"
+                        class="wheel__main-subtext wheel__text--color wheel__main-subtext--rotate"
+                        >to deposite</span
+                      >
+                      <span class="wheel__sub-text wheel__text--color"
+                        >+ 165 FS</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="wheel__prize"
+                    style="
+                      --i: 7;
+                      --clr: linear-gradient(
+                        44deg,
+                        #605387 15.11%,
+                        #101119 108.64%
+                      );
+                    "
+                  >
+                    <div class="wheel__text-container">
+                      <span class="wheel__main-text">165<br />FS</span>
+                      <span
+                        data-translate="landing-wheel-deposit"
+                        class="wheel__sub-text"
+                        >to deposite</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="wheel__prize"
+                    style="
+                      --i: 8;
+                      --clr: linear-gradient(270deg, #ff9600 0%, #daff00 100%);
+                    "
+                  >
+                    <div class="wheel__text-container">
+                      <span
+                        data-translate="landing-wheel-no"
+                        class="wheel__main-text wheel__text--color"
+                        >no</span
+                      >
+                      <span
+                        data-translate="landing-wheel-prize"
+                        class="wheel__sub-text wheel__text--color rotate"
+                        >prize</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="button__mobile" type="button">spin the wheel</button>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="footer__container">
+          <div class="footer__items"></div>
+        </div>
+      </div>
+
+      <div class="modal__overlay" id="modal">
+        <div class="modal__content">
+          <div class="modal-shadow">
+            <div class="modal__ball-coin-wrapper">
+              <img
+                class="modal__ball-coin-img"
+                src="./img/mob/modal_bg_coins_ball@1x.webp"
+                srcset="
+                  ./img/mob/modal_bg_coins_ball@1x.webp 1x,
+                  ./img/mob/modal_bg_coins_ball@2x.webp 2x
+                "
+                alt="ball and coins"
+              />
+            </div>
+            <div class="modal__text-content">
+              <h2 data-translate="landing-popup-title" class="modal__title">
+                Big Win
+              </h2>
+              <p
+                data-translate="landing-popup-subtitle"
+                class="modal__subtitle"
+              >
+                You have got up to
+              </p>
+              <p class="modal__prize">3000 USDT + 165 FS</p>
+              <a
+                data-translate="landing-popup-btn"
+                href="https://claps.com/?from=header-desktop&page-in-modal=%2Fshort-register-modal%2F"
+                class="button modal__button"
+                >Claim bonus</a
+              >
+            </div>
+            <img
+              class="modal__small-ball"
+              src="./img/desktop/small_ball@1x.webp"
+              srcset="
+                ./img/desktop/small_ball@1x.webp 1x,
+                ./img/desktop/small_ball@2x.webp 2x
+              "
+              alt="small ball"
+            />
+            <img
+              class="modal__ball"
+              src="./img/desktop/ball@1x.webp"
+              srcset="
+                ./img/desktop/ball@1x.webp 1x,
+                ./img/desktop/ball@2x.webp 2x
+              "
+              alt="big ball"
+            />
+            <img
+              class="modal__coin--mob"
+              src="./img/desktop/big_coin@1x.webp"
+              srcset="
+                ./img/desktop/big_coin@1x.webp 1x,
+                ./img/desktop/big_coin@2x.webp 2x
+              "
+              ;
+              alt="Coin"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="./js/main.iife.js"></script>
+  </body>
+</html>

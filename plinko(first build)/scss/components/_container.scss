@@ -1,0 +1,50 @@
+.section {
+  width: 100vw;
+  height: 100dvh;
+  padding-inline: clamp(16px, calc(16px + (64 * (100vw - 360px) / 1560)), 80px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-image: image-set(
+    url("/img/desktop/bg_1920.webp") 1x,
+    url("/img/desktop/bg_1920@2x.webp") 2x
+  );
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  color: #fff;
+  font-family: "Sofia Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  &__shadow {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    width: 100%;
+    &--bottom {
+      bottom: 0;
+    }
+  }
+}
+
+@media (max-width: 1366px) {
+  .section {
+    background-image: image-set(
+        url("/img/desktop/bg_1366.webp") 1x,
+        url("/img/desktop/bg_1366@2x.webp") 2x
+    );
+  }
+}
+@media (max-width: 576px) {
+  .section {
+    background-image: image-set(
+        url("/img/mob/bg_360.webp") 1x,
+        url("/img/mob/bg_360@2x.webp") 2x
+    );
+  }
+}

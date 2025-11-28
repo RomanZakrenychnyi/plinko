@@ -1,0 +1,116 @@
+.navigationWrapper {
+  position: relative;
+  z-index: 100;
+  display: inline-block;
+}
+.navigation {
+  position: relative;
+  width: 103px;
+  height: 34px;
+  border-radius: 100px;
+  background: rgba(24, 25, 33, 0.8);
+  cursor: pointer;
+
+  // Місток: невидима смуга під тригером, що тримає :hover під час переходу
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 10px; // видимий розрив між кнопкою і меню
+    z-index: 1; // нижче за меню
+  }
+
+  &:hover .navigation__items,
+  &:focus-within .navigation__items {
+    opacity: 1;
+    transform: translateY(3px) scale(1);
+    pointer-events: auto;
+    max-height: 600px;
+  }
+
+  &:hover .navigation__arrowImg,
+  &:focus-within .navigation__arrowImg {
+    transform: rotate(180deg);
+  }
+
+  &__mainBlock {
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 11px;
+    align-self: stretch;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    & a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      &:hover .navigation__itemText {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__itemImg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  &__arrow {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__arrowImg {
+    transition: transform 0.4s ease;
+  }
+
+  &__items {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 106px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px;
+    gap: 11px;
+    border-radius: 6px;
+    background: rgba(24, 25, 33, 0.8);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+
+    // прихований стан
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+    transform-origin: top;
+    pointer-events: none;
+    transition: opacity 0.28s ease, transform 0.28s ease, max-height 0.4s ease;
+    overflow: hidden;
+    max-height: 0;
+    z-index: 10;
+    & [hidden] {
+      display: none !important; //при hidden пункт меню зникає з загального переліку
+    }
+  }
+}
+
+.navigation.is-open .navigation__items {
+  opacity: 1;
+  transform: translateY(3px) scale(1);
+  pointer-events: auto;
+  max-height: 600px;
+}
+.navigation.is-open .navigation__arrowImg {
+  transform: rotate(180deg);
+}

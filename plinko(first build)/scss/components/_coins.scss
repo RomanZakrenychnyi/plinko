@@ -1,0 +1,138 @@
+.coins-ball__container {
+    position: relative;
+    top: 49%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    width: clamp(284px, 45.83vw, 880px);
+    height: clamp(284px, 45.83vw, 880px);
+}
+
+.small-ball {
+  position: absolute;
+  bottom: 87%;
+  right: 5%;
+  z-index: 2;
+
+  animation: small-ball-float 4s ease-in-out infinite alternate;
+}
+
+.small-ball__img {
+  width: clamp(30px, 4.16vw, 80px);
+  height: auto;
+}
+
+.small-coin {
+  position: absolute;
+  top: 4%;
+  left: -2%;
+  z-index: 2;
+
+  animation: small-coin-float 5s ease-in-out infinite alternate;
+}
+
+.small-coin__img {
+  width: clamp(83px, 10.62vw, 204px);
+  height: auto;
+}
+
+.ball {
+  position: absolute;
+  bottom: 5%;
+  left: -5%;
+  z-index: 0;
+}
+
+.ball__img {
+  width: clamp(144px, 16.77vw, 322px);
+  height: auto;
+  animation: ball-moveLeftRight 3.5s ease-in-out infinite alternate;
+}
+
+@media (max-width: 1024px) {
+  .ball {
+    right: 220px;
+    bottom: -136px;
+  }
+}
+
+@media (max-width: 767px) {
+  .small-ball {
+    bottom: 74%;
+    right: -2%;
+    
+    animation: small-ball-float-mob 4s ease-in-out infinite alternate;
+  }
+
+  .small-coin {
+    top: 2%;
+    left: -20%;
+
+    animation: small-coin-float 7s ease-in-out infinite alternate;
+}
+
+  .ball {
+    left: -5%;
+    bottom: 2%;
+  }
+
+  .ball__img {
+    width: 136px;
+
+    animation: ball-moveLeftRight-mob 4.5s ease-in-out infinite alternate;
+  }
+}
+
+@media (min-height:800px) and (max-height: 850px) and (max-width: 480px) {
+    .small-ball {
+      right: 5%;
+      bottom: 82%;
+    }
+
+    .small-coin {
+        top: -8%;
+        left: -8%;
+    }
+
+    .ball {
+      left: -8%;
+      bottom: -10%;
+    }
+
+    .coin {
+      left: 74%;
+      top: 60%;
+    }
+}
+
+@media (min-height:850px) and (max-height: 950px) and (max-width: 480px) {
+    .ball {
+        left: -8%;
+        bottom: -14%;
+    }
+    
+    .small-ball {
+        bottom: 89%;
+        right: 15%;  
+    }
+
+    .small-coin {
+        top: -2%;
+        left: -5%;
+    }
+
+    .coin {
+      top: 50%;
+      left: 65%;
+    }
+}
+
+body.modal-open .wheel--idle,
+body.modal-open .button--stop,
+body.modal-open .button__mobile,
+body.modal-open .small-ball,
+body.modal-open .small-coin,
+body.modal-open .ball__img,
+body.modal-open .coin,
+body.modal-open .coin--mob {
+    animation-play-state: paused;
+}
